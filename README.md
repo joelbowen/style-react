@@ -1,13 +1,9 @@
-# gatsby-starter-default
-The default Gatsby starter
+# style-react
 
-For an overview of the project structure please refer to the [Gatsby documentation - Building with Components](https://www.gatsbyjs.org/docs/building-with-components/)
+A series of React component styling examples, created for a talk with the
+[Charlotte Front-End Developers](https://www.meetup.com/Charlotte-Front-End-Developers).
 
-Install this starter (assuming Gatsby is installed) by running from your CLI:
-```
-gatsby new gatsby-example-site
-```
+Generated with Gatsby starter.
 
-## Deploy
-
-[![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/gatsbyjs/gatsby-starter-default)
+For an overview of the project structure please refer to the
+[Gatsby documentation - Building with Components](https://www.gatsbyjs.org/docs/building-with-components/)
