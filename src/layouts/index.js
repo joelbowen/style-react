@@ -6,28 +6,28 @@ import Helmet from 'react-helmet'
 // normalizing stylesheet
 import './index.css'
 
+const headerStyles = {
+  headerContainer: {
+    'background-color': 'rebeccapurple',
+    marginBottom: '1.45rem',
+  },
+  header: {
+    margin: '0 auto',
+    maxWidth: 960,
+    padding: '1.45rem 1.0875rem',
+  },
+  h1: { margin: 0 },
+  link: {
+    color: 'white',
+    textDecoration: 'none',
+  },
+}
+
 const Header = () => (
-  <div
-    style={{
-      backgroundColor: 'rebeccapurple',
-      marginBottom: '1.45rem',
-    }}
-  >
-    <div
-      style={{
-        margin: '0 auto',
-        maxWidth: 960,
-        padding: '1.45rem 1.0875rem',
-      }}
-    >
-      <h1 style={{ margin: 0 }}>
-        <Link
-          to="/"
-          style={{
-            color: 'white',
-            textDecoration: 'none',
-          }}
-        >
+  <div style={headerStyles.headerContainer}>
+    <div style={headerStyles.header}>
+      <h1 style={headerStyles.h1}>
+        <Link to="/" style={headerStyles.link}>
           Gatsby
         </Link>
       </h1>
