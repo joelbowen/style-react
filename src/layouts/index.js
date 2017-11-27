@@ -3,12 +3,13 @@ import PropTypes from 'prop-types'
 import Link from 'gatsby-link'
 import Helmet from 'react-helmet'
 
+// normalizing stylesheet
 import './index.css'
 
 const Header = () => (
   <div
     style={{
-      background: 'rebeccapurple',
+      backgroundColor: 'rebeccapurple',
       marginBottom: '1.45rem',
     }}
   >
