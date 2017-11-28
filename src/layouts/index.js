@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 import Link from 'gatsby-link'
 import Helmet from 'react-helmet'
@@ -6,34 +6,59 @@ import Helmet from 'react-helmet'
 // normalizing stylesheet
 import './index.css'
 
-const Header = () => (
-  <div
-    style={{
-      backgroundColor: 'rebeccapurple',
-      marginBottom: '1.45rem',
-    }}
-  >
-    <div
-      style={{
-        margin: '0 auto',
-        maxWidth: 960,
-        padding: '1.45rem 1.0875rem',
-      }}
-    >
-      <h1 style={{ margin: 0 }}>
-        <Link
-          to="/"
+class Header extends Component {
+  state = {
+    viewport: {
+      width: window.innerWidth,
+      height: window.innerHeight,
+    },
+  }
+  componentDidMount = () => {
+    window.addEventListener('resize', this.windowResized)
+  }
+  componentWillUnmount = () => {
+    window.removeEventListener('resize', this.windowResized)
+  }
+  windowResized = () => {
+    this.setState({
+      viewport: {
+        width: window.innerWidth,
+        height: window.innerHeight,
+      },
+    })
+  }
+  render() {
+    return (
+      <div
+        style={{
+          backgroundColor: 'rebeccapurple',
+          // @media (max-width: 600px) {...}
+          marginBottom: this.state.viewport.width < 600 ? '.5rem' : '1.45rem',
+        }}
+      >
+        <div
           style={{
-            color: 'white',
-            textDecoration: 'none',
+            margin: '0 auto',
+            maxWidth: 960,
+            padding: '1.45rem 1.0875rem',
           }}
         >
-          Gatsby
-        </Link>
-      </h1>
-    </div>
-  </div>
-)
+          <h1 style={{ margin: 0 }}>
+            <Link
+              to="/"
+              style={{
+                color: 'white',
+                textDecoration: 'none',
+              }}
+            >
+              Gatsby
+            </Link>
+          </h1>
+        </div>
+      </div>
+    )
+  }
+}
 
 const TemplateWrapper = ({ children }) => (
   <div>
